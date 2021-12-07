@@ -1,12 +1,11 @@
-
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generaciÛn: 15-08-2020 a las 20:33:11
--- VersiÛn del servidor: 10.4.11-MariaDB
--- VersiÛn de PHP: 7.4.4
+-- Tiempo de generaci√≥n: 07-12-2021 a las 00:59:43
+-- Versi√≥n del servidor: 10.4.20-MariaDB
+-- Versi√≥n de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +31,7 @@ CREATE TABLE `student_info` (
   `id` int(5) NOT NULL,
   `name` varchar(20) NOT NULL,
   `roll` int(6) NOT NULL,
-  `class` varchar(7) NOT NULL,
+  `class` varchar(20) NOT NULL,
   `city` varchar(15) NOT NULL,
   `pcontact` varchar(11) NOT NULL,
   `photo` varchar(50) NOT NULL,
@@ -44,11 +43,12 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`id`, `name`, `roll`, `class`, `city`, `pcontact`, `photo`, `datetime`) VALUES
-(48, 'Emiliano Zapata', 234109, 'Primero', 'Carrera 54 N 12', '3162453578', '2341092020-08-14-08-34.png', '2020-08-14 15:23:34'),
-(49, 'Rafael Castro', 234110, 'Segundo', 'Calle 78 N 19 1', '3145648712', '2341102020-08-14-08-13.png', '2020-08-14 15:38:13'),
-(50, 'Julia BarÛn', 234111, 'Tercero', 'Calle 20 N 17 8', '3215468719', '2341112020-08-14-08-27.jpg', '2020-08-14 17:19:16'),
-(51, 'Natalia Cardona', 234112, 'Cuarto', 'Carrera 54 N 12', '3015824671', '2341122020-08-14-08-22.png', '2020-08-14 19:54:22'),
-(52, 'Sofia Tamayo', 234113, 'Quinto', 'Carrera 55 N 97', '3147894512', '2341132020-08-14-08-22.png', '2020-08-14 21:51:22');
+(48, 'Emiliano Zapata', 234109, 'Nivel Basico', 'Carrera 54 N 12', '3162453578', '2341092020-08-14-08-34.png', '2020-08-14 15:23:34'),
+(49, 'Rafael Castro', 234110, 'Nivel Basico', 'Calle 78 N 19 1', '3145648712', '2341102020-08-14-08-13.png', '2020-08-14 15:38:13'),
+(50, 'Julia Bar?n', 234111, 'Nivel Basico', 'Calle 20 N 17 8', '3215468719', '2341112020-08-14-08-27.jpg', '2020-08-14 17:19:16'),
+(51, 'Natalia Cardona', 234112, 'Nivel Intermedio', 'Carrera 54 N 12', '3015824671', '2341122020-08-14-08-22.png', '2020-08-14 19:54:22'),
+(52, 'Sofia Tamayo', 234113, 'Nivel Intermedio', 'Carrera 55 N 97', '3147894512', '2341132020-08-14-08-22.png', '2020-08-14 21:51:22'),
+(58, 'usuario', 234115, 'Nivel Basico', 'av tulipanes', '5194223226', '2341152021-12-07-12-17.jpg', '2021-12-06 23:54:17');
 
 -- --------------------------------------------------------
 
@@ -72,11 +72,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `photo`, `status`, `datetime`) VALUES
-(21, 'configuroweb', 'hola@cweb.com', 'configuroweb', 'c42a54b24089898a208cd520efa47bf79141330d', 'configuroweb23-08-20-08-2020avatar1.png', 'activo', '2020-08-14 15:00:09'),
-(22, 'usuario', 'usuario@cweb.com', 'usuario1', 'c42a54b24089898a208cd520efa47bf79141330d', 'usuario1.jpg', 'inactivo', '2020-08-14 16:32:36');
+(22, 'usuario', 'usuario@cweb.com', 'usuario1', 'c42a54b24089898a208cd520efa47bf79141330d', 'usuario1.jpg', 'activo', '2020-08-14 16:32:36'),
+(23, 'admin', 'admin@gmail.com', 'admin', '036d0ef7567a20b5a4ad24a354ea4a945ddab676', 'admin123.png', 'activo', '2021-12-05 15:16:06');
 
 --
--- Õndices para tablas volcadas
+-- √çndices para tablas volcadas
 --
 
 --
@@ -101,13 +101,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
